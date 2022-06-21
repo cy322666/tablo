@@ -20,14 +20,14 @@ use Ramsey\Uuid\Uuid;
 
 class NewsCreate extends Screen
 {
-    public $name = 'Создание';
+    public $name = 'Create';
 
     /**
      * Display header description.
      *
      * @var string|null
      */
-    public $description = 'Создание новости';
+    public $description = 'Page';
 
     /**
      * Query data.
@@ -100,27 +100,26 @@ class NewsCreate extends Screen
     {
         $news = new News();
 
-        $title  = $request->title;
-        $price  = $request->price;
-        $type   = $request->type;
-
         if($request->image && $request->image !== '') {
 
             $news->image = env('APP_PROTOCOL').$request->image;
         }
 
-        $news->uuid = Uuid::uuid4()->toString();
-        $news->price = $price;
-        $news->type  = $type;
-        $news->title = $title;
-        $news->save();
+        $news->uuid  = Uuid::uuid4()->toString();
+        $news->price = $request->price;
+        $news->type  = $request->type;
+        $news->title = $request->title;
 
-        if($news->save())
+        if ($news->save()) {
+
             $this->showToast($request);
+
+            return redirect()->route('platform.'.$news->type.'.index');
+        }
     }
 
     public function showToast(Request $request): void
     {
-        Toast::success(json_encode($request->toArray()));//$request->get('toast', 'Success'));
+        Toast::success($request->get('toast', 'Success'));
     }
 }

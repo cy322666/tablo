@@ -46,7 +46,7 @@ class NewsDetail extends Screen
      *
      * @var string|null
      */
-    public $description = '';
+    public $description = 'Page';
 
     public $news;
     /**
@@ -139,16 +139,13 @@ class NewsDetail extends Screen
     {
         $news = News::where('id', $news)->first();
 
-        $title  = $request->title;
-        $price  = $request->price;
-
         if($request->image && $request->image !== '') {
 
             $news->image = env('APP_PROTOCOL').$request->image;
         }
 
-        $news->price = $price;
-        $news->title = $title;
+        $news->price = $request->price;
+        $news->title = $request->title;
         $news->save();
 
         if($news->save())
@@ -169,8 +166,6 @@ class NewsDetail extends Screen
         if($news->delete()) {
 
             Toast::success($request->get('toast', 'Success'));
-
-            //return redirect()->route('platform.news.index');
         }
     }
 }

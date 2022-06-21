@@ -98,18 +98,20 @@ class IpadScreen extends Screen
                 TD::make('block', 'Action')
                     ->render(function (News $model) {
 
-                        return Link::make('Change')->href('/admin/iphones/detail/'.$model->id);
-//                        return Button::make(__('Правки'))
-//                            ->icon('pencil')
-//                            ->method('detail')
-//                            ->type(Color::PRIMARY())
-//                            ->parameters([
-//                                'id' => $model->get('id'),
-//                            ]);
-                    }
-                    )
+                        return Button::make(__('Change'))
+                            ->icon('pencil')
+                            ->method('detail', [
+                                'id' => $model->id,
+                            ])
+                            ->type(Color::DARK());
+                    })
             ]),
         ];
+    }
+
+    public function detail($id): \Illuminate\Http\RedirectResponse
+    {
+        return redirect()->route('platform.detail', $id);
     }
 
     public function alert(Request $request)

@@ -115,7 +115,7 @@ class IphoneScreen extends Screen
         ];
     }
 
-    public function detail($id)
+    public function detail($id): \Illuminate\Http\RedirectResponse
     {
         return redirect()->route('platform.detail', $id);
     }

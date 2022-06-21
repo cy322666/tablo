@@ -19,7 +19,13 @@ class News extends Model
         'type',
     ];
 
-    public function getContent()
+    protected $hidden = [
+        'id',
+        'status',
+        'type',
+    ];
+
+    public function getContent(): News
     {
         return $this;
     }
