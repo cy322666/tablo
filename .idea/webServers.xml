@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="97394d67-5c0f-41cb-98c9-4e76cb73aefc" name="tablo">
+        <fileTransfer accessType="SFTP" host="72.167.87.185" port="22" sshConfigId="92f02f51-8d7f-4349-a2c7-0bd7e2f98145" sshConfig="vluekwqe32eu@72.167.87.185:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
