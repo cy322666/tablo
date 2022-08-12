@@ -79,7 +79,7 @@ class IphoneScreen extends Screen
                         // Please use view('path')
                         return "<img src=$model->image
                               alt='sample'
-                              width='250'>";
+                              width='150'>";
                     }),
 
                 TD::make('title', 'Title')

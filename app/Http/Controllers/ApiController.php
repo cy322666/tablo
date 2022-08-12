@@ -12,6 +12,7 @@ class ApiController extends Controller
     {
         return new NewsCollection(
             News::query()
+                ->orderBy('created_at')
                 ->where('type', 'iphone')
                 ->get()
         );
@@ -21,6 +22,7 @@ class ApiController extends Controller
     {
         return new NewsCollection(
             News::query()
+                ->orderBy('created_at')
                 ->where('type', 'android')
                 ->get()
         );
@@ -30,6 +32,7 @@ class ApiController extends Controller
     {
         return new NewsCollection(
             News::query()
+                ->orderBy('created_at')
                 ->where('type', 'ipad')
                 ->get()
         );

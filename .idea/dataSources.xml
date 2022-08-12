@@ -8,5 +8,12 @@
       <jdbc-url>jdbc:postgresql://localhost:5431/cpalike</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="tablo@72.167.87.185" uuid="3fcd11a1-2401-4d08-b262-506fd34ef3d9">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://72.167.87.185:3306/tablo</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

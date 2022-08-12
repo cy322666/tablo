@@ -12,6 +12,7 @@ use Orchid\Screen\Fields\Input;
 use Orchid\Screen\Fields\Picture;
 use Orchid\Screen\Fields\Quill;
 use Orchid\Screen\Fields\Select;
+use Orchid\Screen\Fields\Upload;
 use Orchid\Screen\Screen;
 use Orchid\Support\Color;
 use Orchid\Support\Facades\Layout;
@@ -75,9 +76,11 @@ class NewsCreate extends Screen
             ]),
 
             Layout::rows([
+                Upload::make('upload'),
                 Cropper::make('image')
                     ->width(500)
                     ->height(500)
+//                    ->storage(public_path())
                     ->maxFileSize(2),
             ]),
 
